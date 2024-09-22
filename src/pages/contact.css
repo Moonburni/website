@@ -1,0 +1,63 @@
+/* 联系我们页面的样式 */
+.content {
+    /* padding: 40px 0; */
+    /* background: linear-gradient(135deg, #f0f2f5, #dfe6e9); */
+}
+
+.contact-us {
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    /* border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px; */
+}
+
+.contact-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.contact-card strong {
+    color: #333;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-form-item-label {
+    font-weight: bold;
+}
+
+.ant-btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.ant-btn-primary:hover {
+    background-color: #0056b3;
+}

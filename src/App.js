@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, Switch } from 'react-router-dom';
 import { Layout, Menu, Space, Typography } from 'antd';
 import Home from './pages/Home';
 import Wines from './pages/Wines';
@@ -16,9 +16,9 @@ const HeaderContent = () => {
   const [current, setCurrent] = useState([`${location.pathname}path`]);
   const menuItems = [
     { key: '/path', label: <a href="/">首页</a>, onClick: ({ key }) => setCurrent([key]) },
-    { key: '/winespath', label: <a href="/wines">酒类产品</a>, onClick: ({ key }) => setCurrent([key]) },
-    { key: '/aboutpath', label: <a href="/about">关于我们</a>, onClick: ({ key }) => setCurrent([key]) },
-    { key: '/contactpath', label: <a href="/contact">联系我们</a>, onClick: ({ key }) => setCurrent([key]) },
+    { key: '/winespath', label: <a href="/#/wines">酒类产品</a>, onClick: ({ key }) => setCurrent([key]) },
+    { key: '/aboutpath', label: <a href="/#/about">关于我们</a>, onClick: ({ key }) => setCurrent([key]) },
+    { key: '/contactpath', label: <a href="/#/contact">联系我们</a>, onClick: ({ key }) => setCurrent([key]) },
   ];
   return (
     <Header style={{ display: 'flex', alignContent: 'center' }}>
@@ -35,7 +35,7 @@ function App() {
       <Content>
         <div className="site-layout-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/wines" element={<Wines />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -47,14 +47,14 @@ function App() {
           <div class="footer-section about">
             <h2>关于我们</h2>
             <p>xxx</p>
-            <div direction="vertical" style={{color: '#fff'}}>
+            <div direction="vertical" style={{ color: '#fff' }}>
               <div><WechatOutlined /> &nbsp; 123-456-7890</div>
               <div><WechatOutlined /> &nbsp; info@example.com</div>
             </div>
-            <div style={{marginTop: '20px'}}>
+            <div style={{ marginTop: '20px' }}>
               <a href="#"><WechatOutlined style={{ fontSize: '24px', marginRight: 10 }} /></a>
-              <a href="#"><WeiboOutlined style={{ fontSize: '24px', marginRight: 10  }} /></a>
-              <a href="#"><TaobaoOutlined style={{ fontSize: '24px', marginRight: 10  }} /></a>
+              <a href="#"><WeiboOutlined style={{ fontSize: '24px', marginRight: 10 }} /></a>
+              <a href="#"><TaobaoOutlined style={{ fontSize: '24px', marginRight: 10 }} /></a>
             </div>
           </div>
           <div class="footer-section links">

@@ -4,6 +4,9 @@
     padding: 40px 0;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
 }
 
 .about-card {
@@ -13,6 +16,15 @@
     padding: 20px;
     margin-bottom: 20px;
 }
+
+.paragraph::first-letter {
+    font-weight: bold;
+    font-size: 1.5em;
+    /* 可选：增加字体大小 */
+    color: #000;
+    /* 可选：设置字体颜色 */
+}
+
 
 .about-card h2 {
     font-size: 28px;

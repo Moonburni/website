@@ -1,40 +1,46 @@
 import React from 'react';
 import './wines.css';
-import { Col, Row, Card, Typography, Button } from 'antd';
-const { Title, Paragraph } = Typography;
+import { Col, Row, Card, Typography, Button, Modal } from 'antd';
+import G from '../img/181728568367_.pic_hd.jpg'
+import H from '../img/161728568366_.pic_hd.jpg'
 
+const { Title, Paragraph } = Typography;
 const wines = [
   {
     id: 1,
-    name: '优质红酒',
-    description: '这是一款来自法国波尔多地区的优质红酒，采用精选葡萄酿造而成。酒体饱满，口感丰富，带有浓郁的黑莓和黑醋栗香气，单宁柔和，余味悠长。适合搭配牛排、烤肉等红肉菜肴。',
-    origin: '法国波尔多',
+    name: '胭脂酒-天青52°系',
+    description: '在延续了传统原浆的厚重口感之下，因不断调试改良北方酒酿酒配方，最终 成型的胭脂酒酒香介于清香、兼香、浓香之间',
+    origin: '胭脂米',
     year: 2018,
-    alcohol: '13.5%',
-    price: '￥399',
-    color: '#8B6969',
+    alcohol: '52%',
+    price: '￥-',
+    img: G,
   },
   {
     id: 2,
-    name: '清爽白葡萄酒',
-    description: '这是一款来自新西兰的清爽白葡萄酒，采用长相思葡萄酿造而成。酒体轻盈，口感清新，带有柑橘和青草的香气，酸度适中，适合搭配海鲜、沙拉等菜肴。',
-    origin: '新西兰',
+    name: '胭脂酒-典雅60系',
+    description: '零勾兑，把一切交给时间，酒体以不同年份基酒同盟会通过黄金配比勾调 达到60度的绵柔浓醇的口感',
+    origin: '胭脂米',
     year: 2020,
-    alcohol: '12.5%',
-    price: '￥299',
-    color: '#698B69',
-  },
-  {
-    id: 3,
-    name: '陈年威士忌',
-    description: '这是一款来自苏格兰的陈年威士忌，采用大麦酿造而成。酒体醇厚，口感复杂，带有烟熏和香草的香气，余味悠长。适合纯饮或搭配雪茄。',
-    origin: '苏格兰',
-    year: 1995,
-    alcohol: '40%',
-    price: '￥1299',
-    color: '#69698B',
-  },
+    alcohol: '60%',
+    price: '￥-',
+    img: H,
+  }
 ];
+
+const info = () => {
+  Modal.info({
+    title: '请使用微信扫描二维码购买',
+    closable: true,
+    icon: false,
+    content: (
+      <div style={{ width: '100%' }}>
+        <div style={{ width: '150px', height: '150px', background: '#eee' }}></div>
+      </div>
+    ),
+    footer: null
+  });
+};
 
 function Wines() {
   return (
@@ -44,17 +50,17 @@ function Wines() {
           <Card key={wine.id} className="product-card">
             <Row gutter={16}>
               <Col span={8}>
-                <div className="product-image" style={{ backgroundColor: wine.color }}></div>
+                <div className="product-image" style={{ backgroundImage: `url(${wine.img})` }}></div>
               </Col>
               <Col span={16}>
                 <div className="product-description">
                   <Title level={2}>{wine.name}</Title>
                   <Paragraph>{wine.description}</Paragraph>
-                  <Paragraph><strong>产地:</strong> {wine.origin}</Paragraph>
+                  <Paragraph><strong>原料:</strong> {wine.origin}</Paragraph>
                   <Paragraph><strong>年份:</strong> {wine.year}</Paragraph>
                   <Paragraph><strong>酒精度:</strong> {wine.alcohol}</Paragraph>
                   <Paragraph><strong>价格:</strong> {wine.price}</Paragraph>
-                  <Button type="primary">立即购买</Button>
+                  <Button onClick={info}>立即购买</Button>
                 </div>
               </Col>
             </Row>

@@ -3,6 +3,7 @@ import './wines.css';
 import { Col, Row, Card, Typography, Button, Modal } from 'antd';
 import G from '../img/181728568367_.pic_hd.jpg'
 import H from '../img/161728568366_.pic_hd.jpg'
+import A from '../img/image.png';
 
 const { Title, Paragraph } = Typography;
 const wines = [
@@ -35,7 +36,7 @@ const info = () => {
     icon: false,
     content: (
       <div style={{ width: '100%' }}>
-        <div style={{ width: '150px', height: '150px', background: '#eee' }}></div>
+        <div style={{ backgroundImage: `url(${A})`, backgroundSize: 'contain', width: '100%', height: '180px', backgroundRepeat: 'no-repeat' }}></div>
       </div>
     ),
     footer: null

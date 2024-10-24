@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Card, Typography } from 'antd';
 import './contact.css'; // 引入自定义样式
+import A from '../img/image.png';
 
 const { Title, Paragraph } = Typography;
 function Contact() {
@@ -16,13 +17,13 @@ function Contact() {
             <Col span={12}>
               <Title level={3}>联系信息</Title>
               <Paragraph>
-                <strong>地址:</strong> xx市xx区xx街道123号
+                <strong>地址:</strong> 安徽省合肥市蜀山区望江西路印象西湖花园公建区西组团2-2217
               </Paragraph>
               <Paragraph>
-                <strong>电话:</strong> 123-456-7890
+                <strong>电话:</strong> 17354141620 张女士
               </Paragraph>
               <Paragraph>
-                <strong>邮箱:</strong> info@example.com
+                <strong>邮箱:</strong> 1260267729@qq.com
               </Paragraph>
             </Col>
             <Col span={12}>
@@ -43,8 +44,7 @@ function Contact() {
           </Row>
           <Title level={3}>二维码</Title>
           <div class="qr-code">
-            <div style={{ width: '150px', height: '150px', background: '#eee' }}>
-            </div>
+            <div style={{ backgroundImage: `url(${A})`, backgroundSize: 'contain', width: '100%', height: '180px', backgroundRepeat: 'no-repeat' }}></div>
           </div>
         </Card>
       </div>
